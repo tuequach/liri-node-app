@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tuequach/liri-node-app/issues"
   },
-  "homepage": "https://github.com/tuequach/liri-node-app#readme"
+  "homepage": "https://github.com/tuequach/liri-node-app#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
 }
