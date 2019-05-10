@@ -49,7 +49,7 @@ function showConcertInfo(inputPara) {
             console.log('Venue Location: ' + concerts[i].venue.city);
             fs.appendFileSync('log.txt', 'Venue Location ' + concerts[i].venue.city+'\n');
             console.log('Date of the Event: ' + concerts[i].datetime);
-            fs.appendFileSync('log.txt', 'DAte of the Event: ' + concerts[i].dateTime+ '\n');
+            fs.appendFileSync('log.txt', 'Date of the Event: ' + concerts[i].dateTime+ '\n');
             fs.appendFileSync('log.txt', '***************'+ '\n');
         }
     } else {
@@ -57,4 +57,40 @@ function showConcertInfo(inputPara) {
     }
 });
     }
+
+    //function for music info:spotify 
+function showSongInfo(inputPara) {
+    if (inputPara === undefined) {
+        inputPara = 'This Sign'; 
+    }
+spotify.search (
+    {
+            type: 'track',
+            query: inputPara
+    },
+    function (err, data) {
+        if (err) {
+            console.log('Error occured: ' + err);
+            return;
+        }
+
+        var songs = data.tracks.items;
+
+        for (var i=0; i < songs.length; i ++) {
+            console.log('SONG INFO');
+            fs.appendFileSync('log.txt', '*****SONG INFO***** \n');  //append to log.txt
+            console.log (i);
+            fs.appendFileSync('log.txt', i + '\n');
+            console.log('Song name: ' + songs[i].name);
+            fs.appendFileSync('log.txt', 'Song Name: ' + songs[i].name + '\n');
+            console.log('Preview Song: ' + songs[i].previous.name);
+            fs.appendFileSync('log.txt', 'Preview Song: ' + songs[i].previous.name+'\n');
+            console.log('Date of the Event: ' + songs[i].datetime);
+            fs.appendFileSync('log.txt', 'DAte of the Event: ' + songs[i].dateTime+ '\n');
+            fs.appendFileSync('log.txt', '***************'+ '\n');
+        }
+        }
+    }
+)
+}
 
