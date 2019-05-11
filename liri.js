@@ -77,20 +77,33 @@ spotify.search (
         var songs = data.tracks.items;
 
         for (var i=0; i < songs.length; i ++) {
-            console.log('SONG INFO');
+            console.log('**********SONG INFO***********');
             fs.appendFileSync('log.txt', '*****SONG INFO***** \n');  //append to log.txt
             console.log (i);
             fs.appendFileSync('log.txt', i + '\n');
             console.log('Song name: ' + songs[i].name);
             fs.appendFileSync('log.txt', 'Song Name: ' + songs[i].name + '\n');
-            console.log('Preview Song: ' + songs[i].previous.name);
-            fs.appendFileSync('log.txt', 'Preview Song: ' + songs[i].previous.name+'\n');
-            console.log('Date of the Event: ' + songs[i].datetime);
-            fs.appendFileSync('log.txt', 'DAte of the Event: ' + songs[i].dateTime+ '\n');
+            console.log('Preview Song: ' + songs[i].previous_url);
+            fs.appendFileSync('log.txt', 'Preview Song: ' + songs[i].previous_url + '\n');
+            console.log('Album: ' + songs[i].album.name);
+            fs.appendFileSync('log.txt', 'Album: ' + songs[i].album.name + '\n');
+            console.log('Artist(s): ' + songs[i].artists[0].name);
+            fs.appendFileSync('log.txt', 'Artist(s): ' + songs[i].artists[0].name + '\n');
+            console.log('***************');
             fs.appendFileSync('log.txt', '***************'+ '\n');
+            }
         }
-        }
-    }
-)
-}
+    );
+};
 
+//function for movie info: OMDB
+function showMovieInfo (inputPara){
+    if (inputPara === undefined) {
+        inputPara = 'Mr. Nobody'
+        console.log('--------------');
+        fs.appendFileSync("log.txt", "-----------------------\n");
+        console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
+        fs.appendFileSync("log.txt", "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/" +"\n");
+        console.log("It's on Netflix!");
+        fs.appendFileSync("log.txt", "It's on Netflix!\n");
+    }
