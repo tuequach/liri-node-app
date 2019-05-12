@@ -13,7 +13,6 @@ How to use LIRI
 - Open up terminal such as Git and navigate straight into the folder that contains the file liri.js 
 - Run the command that you would like.
 
-
 Ex. Run the concert-this command
  node liri.js concert-this 'name of artist of band'
  - The Output of the system will display a list of all events and location of when and where the band will have their show next. In addition, it will also log all results into the log.txt file.
@@ -30,20 +29,26 @@ Ex. Run the do-what-it-says command
 node liri.js do-what-it-says
 - The Output will display the text in the random.txt file and show the information listed into the random.txt file 
 
+*******************************************************************************
 
-All Technologies Used:
+All Technologies Used
+
 Javascript
 Node.js
+
 Node NPM Packages: 
 - Node-Spotify-API
 - Request
 - Moment
 - DotEnv
+
 APIs used: 
 - Spotify
 - OMDB
--Bands in Town
+- Bands in Town
+
 Terminal: 
 - Git
+
 Flow Control:
 - Github 
