@@ -1,18 +1,20 @@
 require("dotenv").config();
 
-var keys = require("./keys.js");
-var fs = require('fs');
+
 var request = require('request');
+var fs = require('fs');
+var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
-var Spotify = new Spotify(keys.spotify);
+var spotify = new Spotify(keys.spotify);
+
 
 var userOpt = process.argv[2];
 var inputPara = process.argv[3];
 
-userInputs (userOpt, inputPara);
+UserInputs (userOpt, inputPara);
 
 //functions in switch statements
-function userInputs (userOpt, inputPara) {
+function UserInputs (userOpt, inputPara) {
     switch (userOpt) {
         case 'concert-this':
             showConcertInfo(inputPara);
@@ -108,7 +110,7 @@ function showMovieInfo (inputPara){
         fs.appendFileSync("log.txt", "It's on Netflix!\n");
     }
 
-    var queryUrl = "http://www.omdbapi.com/?t=" + inputPara + "&y=&plot=short&apikey=b3c0b435";
+    var queryUrl = "http://www.omdbapi.com/?t=" + inputPara + "&y=&plot=short&apikey=trilogy";
     request(queryUrl, function(error, response, body) {
     // If the request is successful
     if (!error && response.statusCode === 200) {
