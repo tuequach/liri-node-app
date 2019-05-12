@@ -16,18 +16,22 @@ How to use LIRI
 Ex. Run the concert-this command
  node liri.js concert-this 'name of artist of band'
  - The Output of the system will display a list of all events and location of when and where the band will have their show next. In addition, it will also log all results into the log.txt file.
+ ![alt text](https://github.com/tuequach/liri-node-app/blob/master/Images%20from%20Application%20Working/concert-this.jpeg)
 
 Ex. Run the spotify-this-song command
 node liri.js spotify-this-song 'name of the song'
 - The Output of the system will display a list of information associated with the certain song, showing multiple records and append to the log.txt file.
+![alt text](https://github.com/tuequach/liri-node-app/blob/master/Images%20from%20Application%20Working/spotify-this-song.jpeg)
 
 Ex. Run the movie-this command
 node liri.js movie this 'name of the movie'
 - The Output will display all information associated with the movie and display the results into the log.txt file.
+![alt text](https://github.com/tuequach/liri-node-app/blob/master/Images%20from%20Application%20Working/movie-this.jpeg)
 
 Ex. Run the do-what-it-says command
 node liri.js do-what-it-says
 - The Output will display the text in the random.txt file and show the information listed into the random.txt file 
+![alt text](https://github.com/tuequach/liri-node-app/blob/master/Images%20from%20Application%20Working/Do-what-it-say.jpeg)
 
 *******************************************************************************
 
